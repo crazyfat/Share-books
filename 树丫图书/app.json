@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/mianInterf/mianInterf",
+    "pages/News/News",
+    "pages/Info/Info",
+    "pages/Carp/Carp",
+    "pages/Issue/Issue",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#abdd22",
+    "navigationBarTitleText": "树丫图书",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#abdd22",
+    "list": [
+      {
+        "pagePath": "pages/mianInterf/mianInterf",
+        "text": "树丫",
+        "iconPath": "pages/images/Mf.png",
+        "selectedIconPath": "pages/images/cMf.png"
+      },
+      {
+        "pagePath": "pages/Carp/Carp",
+        "text": "收藏",
+        "iconPath": "pages/images/Collect.png",
+        "selectedIconPath": "pages/images/cCollect.png"
+      },
+      {
+        "pagePath": "pages/Issue/Issue",
+        "text": "发布",
+        "iconPath": "pages/images/cIssue.png",
+        "selectedIconPath": "pages/images/cIssue.png"
+      },
+      {
+        "pagePath": "pages/News/News",
+        "text": "消息",
+        "iconPath": "pages/images/News.png",
+        "selectedIconPath": "pages/images/cNews.png"
+      },
+      {
+        "pagePath": "pages/Info/Info",
+        "text": "我的",
+        "iconPath": "pages/images/If.png",
+        "selectedIconPath": "pages/images/cIf.png"
+      }
+      
+    ]
+  }
+}

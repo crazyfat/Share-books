@@ -1,0 +1,5 @@
+<!--pages/mianInterf/mianInterf.wxml-->
+<view class="con">
+<text class="xiaomi" >这是小米兰亭</text>
+<text class="uni">这不是小米兰亭</text>
+</view>

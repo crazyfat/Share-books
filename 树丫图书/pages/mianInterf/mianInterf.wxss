@@ -1,0 +1,11 @@
+@import '../../style/xiaomi.wxss';
+.con{
+  display: flex;
+}
+.xiaomi{
+  font-family: 'MI LANTING';
+  font-size: 60rpx;
+}
+.uni{
+  font-size: 60rpx;
+}
