@@ -1,5 +1,145 @@
-<!--pages/mianInterf/mianInterf.wxml-->
-<view class="con">
-<text class="xiaomi" >这是小米兰亭</text>
-<text class="uni">这不是小米兰亭</text>
+<view class="miancontain">
+  <view class="searchView">
+    <view class="search">
+      <image class="searchImage" src="../images/search.png"></image>
+      <text class="searchText">搜索</text>
+    </view>
+  </view>
+  <view class="swiperVie">
+      <swiper class="swiper_wheel" indicator-dots='true' autoplay='true' interval='2000' >
+        <swiper-item><image class="swiperImage" src='../images/share1.jpg'></image></swiper-item>
+        <swiper-item><image class="swiperImage" src='../images/share2.jpg'></image></swiper-item>
+        <swiper-item><image class="swiperImage" src='../images/share3.jpg'></image></swiper-item>
+      </swiper>
+  </view>
+
+      <view class="jobs">
+      <view class="jobs_list">
+        <view class="list">
+          <image class="listPic" src="../images/cp.png"></image>
+          <text class="listT" bindtap='but'>计算机</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/acc.png"></image>
+          <text class="listT">会计</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/econ.png"></image>
+          <text class="listT">经济</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/law.png"></image>
+          <text class="listT">法律</text>
+        </view>
+      </view>
+    
+      <view class="jobs_list2">
+        <view class="list">
+          <image class="listPic" src="../images/math.png"></image>
+          <text class="listT">数学</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/eng.png"></image>
+          <text class="listT">英语</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/phy.png"></image>
+          <text class="listT">物理</text>
+        </view>
+        <view class="list">
+          <image class="listPic" src="../images/more.png"></image>
+          <text class="listT">更多</text>
+        </view>
+      </view>
+      </view>
+      <view class="block1"></view>
+      <!--热门书-->
+      <view class="hot-book">
+        <text   class="hotTe">热门推荐</text>
+        <text class="moreHot">更多</text>
+        <image class="hotPic" src='../images/right.png'></image>
+      </view>
+      <view class="block2"></view>
+      <view class="book_list1">
+        <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[0].url}}'></image>
+          <text class="bookName">{{Bestseller[0].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[0].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[1].url}}'></image>
+          <text class="bookName">{{Bestseller[1].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[1].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[2].url}}'></image>
+          <text class="bookName">{{Bestseller[2].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[2].price}}/期</text>
+          </view>
+        </view>
+      </view>
+
+          <view class="book_list1">
+        <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[3].url}}'></image>
+          <text class="bookName">{{Bestseller[3].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[3].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[4].url}}'></image>
+          <text class="bookName">{{Bestseller[4].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[4].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[5].url}}'></image>
+          <text class="bookName">{{Bestseller[5].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[5].price}}/期</text>
+          </view>
+        </view>
+      </view>
+
+             <view class="book_list1">
+        <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[6].url}}'></image>
+          <text class="bookName">{{Bestseller[6].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[6].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[7].url}}'></image>
+          <text class="bookName">{{Bestseller[7].name}}</text>
+                    <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[7].price}}/期</text>
+          </view>
+        </view>
+          <view class="Abook">
+          <image class="bookPic" src='{{Bestseller[8].url}}'></image>
+          <text class="bookName">{{Bestseller[8].name}}</text>
+          <view class="price">
+          <image class="money" src='../images/Money.png'></image>
+          <text class="priceTe">{{Bestseller[8].price}}/期</text>
+          </view>
+        </view>
+      </view>
+
+
 </view>

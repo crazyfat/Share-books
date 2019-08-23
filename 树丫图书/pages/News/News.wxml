@@ -1,2 +1,25 @@
-<!--pages/News/News.wxml-->
-<text>pages/News/News.wxml</text>
+<!--pages/Community/Community.wxml-->
+<view class="top_ba">
+  <image class="addFriend" src='../images/friend.png'></image>
+  <text class="Bigtitle">0条通知消息</text>
+</view>
+<view class='msg'>
+   <view class="module1">
+      <image class='Picmodule' src='../images/communityPic.png'></image>
+      <text class="textModule">我的交易</text>
+    </view>
+     <view class="module1">
+      <image class='Picmodule' src='../images/msgTip.png'></image>
+      <text class="textModule">通知信息</text>
+    </view>
+     <view class="module1">
+      <image class='Picmodule' src='../images/Interaction.png'></image>
+      <text class="textModule">互动消息</text>
+    </view>
+</view>
+<view class='block'>
+  <image class="noNewsCla" src='../images/Null.png' ></image>
+  <text style='font-size:38rpx;color:rgb(105, 105, 105);' >暂时没有新消息哦~</text>
+</view>
+
+

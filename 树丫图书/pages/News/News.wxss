@@ -1,1 +1,120 @@
-/* pages/News/News.wxss */
+.top_ba{
+  height: 260rpx;
+  width: 100%;
+  background: linear-gradient( #8be679 , #3cbd14);
+  padding-top: 60rpx;
+  padding-left: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.addFriend{
+  height: 60rpx;
+  width: 60rpx;
+}
+.Bigtitle{
+  font-size: 30rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.msg{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top:150rpx;
+  height: 200rpx;
+  width: 90%;
+  background-color: #fff;
+  margin-left: 5%;
+  border-radius: 30rpx;
+   box-shadow: 0rpx 0rpx 20rpx  0rpx rgba(0, 0, 0, 0.527); 
+}
+.module1{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Picmodule{
+  border-radius: 100rpx;
+  height: 100rpx;
+  width:100rpx;
+}
+.textModule{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: rgb(105, 105, 105);
+}
+.block{
+  height: 500rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.noNewsCla{
+  width: 200rpx;
+  height: 200rpx;
+}
+.chat{
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+.chatVie{
+  padding-left: 24rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+   align-items:center;
+}
+.exHead{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 20rpx;
+}
+.Textlist{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 30rpx;
+  width: 52%;
+}
+.title{
+  font-size: 30rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all; /* 追加这一行代码 */
+}
+.detail{
+  font-size: 26rpx;
+  color: rgb(105, 105, 105);
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all; /* 追加这一行代码 */
+}
+.time{
+  font-size: 24rpx;
+  color: rgb(105, 105, 105);
+  margin-left: 12%;
+}
+.line{
+  width: 90%;
+  height: 2rpx;
+  background-color: rgb(224, 222, 222);
+  margin-left: 5%;
+}

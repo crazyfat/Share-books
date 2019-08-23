@@ -1,2 +1,47 @@
 <!--pages/Issue/Issue.wxml-->
-<text>pages/Issue/Issue.wxml</text>
+<view class class="block"></view>
+<view class='infoVie'>
+  <view class="photoVie" bindtap="choice">
+    <view class="greyVie" hidden='{{textHidden}}'>
+    <image class="chooseBook" src='{{bookPic}}'></image>
+    <text class="title">添加你的封面</text>
+    </view>
+    <image class="myBook" hidden='{{photoHidden}}' src='{{mybookPic}}'></image>
+  </view>
+  <view class="deVie">
+    <view class='bookinfo'>
+    <input placeholder='书名' value="{{book_name}}" bindinput="getBookname" class="infoTe"></input>
+    </view>
+    <view class='bookinfo'>
+    <input placeholder='作者' value="{{book_author}}" bindinput="getBookauthor" class="infoTe"></input>
+    </view>
+    <view class='bookinfo'>
+    <input placeholder='出版社' value="{{book_pub}}" bindinput="getBookpub" class="infoTe"></input>
+    </view>
+    <view class='bookinfo'>
+    <input type="digit" placeholder='原价' class="infoTe"></input>
+    </view>
+    <view class='bookinfolast'>
+    <input type="number" placeholder='ISBN' value="{{ISBN}}" bindinput="getBookisbn" class="infoTe"></input>
+    </view>
+  </view>
+</view>
+<view class class="block"></view>
+<view class="bookStatus">
+  <view class="status">
+    <text class="statusTe">书籍状态:</text>
+    <picker class="statusTe" mode = selector range="{{status}}" value='{{index}}' bindchange='listenStatus'>
+      <text class="statusTip">{{status[index]}}</text>
+    </picker>
+  </view>
+  <text class="statusTe">{{pricestatus}}:¥</text>
+  <input class="statusp" value="{{price}}" bindinput="getPrice" type="digit" ></input>
+</view>
+
+<view class="bookStatus" hidden="{{isSale}}" >
+  <text class="statusTe">租期：</text>
+  <picker class="statusTe" mode = selector range="{{month}}" value='{{R_index}}' bindchange='listenRentTime'>
+      <text class="statusTip">{{month[R_index]}}</text>
+    </picker>
+</view>
+<button class="issueBut" bindtap="postOrder" >发布</button>

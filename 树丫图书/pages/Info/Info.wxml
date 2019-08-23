@@ -1,2 +1,55 @@
-<!--pages/Info/Info.wxml-->
-<text>pages/Info/Info.wxml</text>
+<!-- 个人信息 -->
+<view class="summary">
+	<!-- <view class="avatar-container"> -->
+		<image src="{{avatar ? avatar : '../images/Aoteman.jpg'}}" class="avatar" />
+	<!-- </view> -->
+		<view class="nickname">nickName</view>
+
+</view>
+<!-- 账户
+<view class="account">
+	<view class="item">
+		<view class="value balance">0.00</view>
+		<view class="caption">余额</view>
+	</view>
+	<view class="item">
+		<view class="value coupon">0</view>
+		<view class="caption">优惠</view>
+	</view>
+	<view class="item">
+		<view class="value credit">0</view>
+		<view class="caption">积分</view>
+	</view>
+</view>
+ -->
+<!-- 列表 -->
+<view class="List">
+<!-- 管理员 -->
+<view class="listview" >
+<view class="item" style="border-top-left-radius: 10rpx;border-top-right-radius: 10rpx;" >
+		<image class="hd" src="../images/post.png" />
+		<navigator class="bd" url="../../address/list/list" open-type="navigate" hover-class="none">我的发布</navigator>
+		<view class="ft"></view>
+	</view>
+  <view class="item">
+		<image class="hd" src="../images/order.png" />
+		<view class="bd"  bindtap="contact">我的订单</view>
+		<view class="ft"></view>
+	</view>
+	<view class="item">
+		<image class="hd" src="../images/kefu.png" />
+		<navigator class="bd" url="../../shop/setting/setting" open-type="navigate" hover-class="none">联系客服</navigator>
+		<view class="ft"></view>
+	</view>
+  <view class="item">
+		<image class="hd" src="../images/relog.png" />
+		<view class="bd"  bindtap="re_login">重新登录</view>
+		<view class="ft"></view>
+	</view>
+</view>
+</view>
+<!-- 退出登录 
+<view class="logout" bindtap="logout">
+	退出登录
+</view>
+-->

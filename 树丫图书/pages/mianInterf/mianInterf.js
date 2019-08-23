@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    Bestseller:''
 
   },
 
@@ -12,7 +13,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this
+    wx.cloud.init()
+    const db = wx.cloud.database();
+    db.collection('Bestseller').get({
+      success: function (res) {
+        // res.data 包含该记录的数据
+        that.setData({
+          Bestseller:res.data
+        })
+        console.log(that.data.Bestseller)
+      }
+    })
   },
 
   /**

@@ -1,11 +1,166 @@
 @import '../../style/xiaomi.wxss';
-.con{
-  display: flex;
+.miancontain{
+  height: 100%;
+  width:100%;
 }
-.xiaomi{
+.searchView{
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  width: 90%;
+  height:60rpx;
+}
+.search{
+ display: flex;
+ border-radius:40rpx;
+ background-color: rgb(248, 248, 248);
+ padding-top: 10rpx;
+ padding-bottom: 10rpx;
+ padding-left: 40%;
+}
+.searchImage{
+  width: 40rpx;
+  height: 40rpx;
+}
+.searchText{
+  margin-left: 15rpx;
+  font-size: 28rpx;
+  color: #8a8a8a;
   font-family: 'MI LANTING';
-  font-size: 60rpx;
 }
-.uni{
-  font-size: 60rpx;
+.block1{
+  height: 2rpx;
+  width: 100%;
+  background-color: #8a8a8a;
+}
+.swiperVie{
+  margin-top: 20rpx;
+}
+.swiper_wheel{
+  width: 100%;
+}
+.swiperImage{
+  width: 100%;
+}
+.jobs{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-top: 20rpx;
+}
+.jobs_list{
+  display: flex;        /*弹性盒子*/
+  flex-direction: row;  /*水平方向挤压*/
+  height: 100%;
+  width: 100%;
+}
+.list{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /*垂直居中*/
+  align-items: center;      /*水平居中*/
+}
+.listPic{
+  width: 80rpx;
+  height: 80rpx;
+}
+.listT{
+  font-size: 26rpx;
+  font-family: 'MI LANTING';
+}
+.jobs_list2{
+  margin-top: 10rpx;
+  display: flex;        /*弹性盒子*/
+  flex-direction: row;  /*水平方向挤压*/
+  height: 100%;
+  width: 100%;
+}
+.block1{
+  margin-top: 10rpx;
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+  height: 20rpx;
+}
+.hot-book{
+  padding-left: 20rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  /*垂直居中*/
+}
+.hotTe{
+  width: 86%;
+  font-size: 30rpx;
+  font-family: 'MI LANTING';
+}
+.moreHot{
+  font-size: 26rpx;
+  font-family: 'MI LANTING';
+}
+.hotPic{
+  width: 24rpx;
+  height: 24rpx;
+}
+.block2{
+  margin-top: 10rpx;
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+  height: 4rpx;
+}
+.book_list1{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+.Abook{
+  padding-top: 20rpx;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /*水平居中*/
+  align-items: center;      /*垂直居中*/
+}
+.bookPic{
+  height: 260rpx;
+  width: 85%;
+}
+.bookName{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-family: 'MI LANTING';
+}
+.book_list1{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+..book_list2{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+.price{
+  display: flex;
+  flex-direction: row;
+   justify-content: center;  /*水平居中*/
+  align-items: center;      /*垂直居中*/
+}
+.money{
+  width: 25rpx;
+  height: 25rpx;
+}
+.priceTe{
+  font-size: 26rpx;
+  color: #1ccf16;
 }
