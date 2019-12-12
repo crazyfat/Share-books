@@ -1,28 +1,43 @@
 <!--pages/Issue/Issue.wxml-->
+<view hidden='{{hide}}'>
+<view class="Isbn"  >
+<text>ISBN :</text>
+<input bindinput="getCode" value='{{isbnCode}}' placeholder='点击右侧图标扫描' ></input>
+<image bindtap='scanCode' class="scanPic" src='../images/scan.png' ></image>
+</view>
+<button style='margin-top:10%;width:50%' type='primary' bindtap='getInfoByIsbn' >点击查找</button>
+</view>
+<view hidden='{{!hide}}'>
+<!--this is add Pic-->
+<view  class="pics" hidden='{{addFin}}' >
+  <view class='imgPicVie'>
+     <image src='{{pics[0]}}' class="imgPic" ></image>
+  </view>
+</view>
+<view class="cancle" bindtap="cancle" >取消发布</view>
+<view class="addPic" bindtap='chooseImg' >
+  <image class="Picadd" src='../images/add_white.png' ></image>
+</view>
 <view class class="block"></view>
 <view class='infoVie'>
-  <view class="photoVie" bindtap="choice">
-    <view class="greyVie" hidden='{{textHidden}}'>
-    <image class="chooseBook" src='{{bookPic}}'></image>
-    <text class="title">添加你的封面</text>
-    </view>
-    <image class="myBook" hidden='{{photoHidden}}' src='{{mybookPic}}'></image>
+  <view class="photoVie" bindtap="Scan">
+    <image class="myBook" src='{{bookInfo.pic}}'></image>
   </view>
   <view class="deVie">
     <view class='bookinfo'>
-    <input placeholder='书名' value="{{book_name}}" bindinput="getBookname" class="infoTe"></input>
+    <text class="infoTe">{{bookInfo.title}}</text>
     </view>
     <view class='bookinfo'>
-    <input placeholder='作者' value="{{book_author}}" bindinput="getBookauthor" class="infoTe"></input>
+    <text class="infoTe">{{bookInfo.author}}</text>
     </view>
     <view class='bookinfo'>
-    <input placeholder='出版社' value="{{book_pub}}" bindinput="getBookpub" class="infoTe"></input>
+    <text class="infoTe">{{bookInfo.publisher}}</text>
     </view>
     <view class='bookinfo'>
-    <input type="digit" placeholder='原价' class="infoTe"></input>
+    <text class="infoTe">{{bookInfo.price}}￥</text>
     </view>
     <view class='bookinfolast'>
-    <input type="number" placeholder='ISBN' value="{{ISBN}}" bindinput="getBookisbn" class="infoTe"></input>
+    <text class="infoTe">{{bookInfo.isbn}}</text>
     </view>
   </view>
 </view>
@@ -39,9 +54,12 @@
 </view>
 
 <view class="bookStatus" hidden="{{isSale}}" >
-  <text class="statusTe">租期：</text>
-  <picker class="statusTe" mode = selector range="{{month}}" value='{{R_index}}' bindchange='listenRentTime'>
-      <text class="statusTip">{{month[R_index]}}</text>
-    </picker>
+<view class="status">
+  <text class="statusTe">最长租期：</text>
+  <input class="statusp" value="{{rentTime}}" bindinput="getRentTime" type="digit" ></input>
+</view>
+  <text class="statusTe">押金:¥</text>
+  <input class="statusp" value="{{deposit}}" bindinput="getDeposit" type="digit" ></input>
 </view>
 <button class="issueBut" bindtap="postOrder" >发布</button>
+</view>

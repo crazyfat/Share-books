@@ -1,0 +1,161 @@
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"     bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!--我买到的-->
+<view wx:if="{{currentTab==0}}" >
+    <!--用户订单列表-->
+  <view class="OrderList" wx:for="{{Orderitem}}"  data-index="{{idx}}">
+    <view >
+      <!--商品描述-->
+      <view class="Ordertop" bindtap="detail" data-id="{{item}}">
+        <view class="left">
+          <view class="img">
+            <image class="bookimg" src="{{url+item.unused2}}"/>
+          </view>
+        </view>
+        <view class="right" >
+          <view class="BookDescription">
+            <view class="title">{{item.unused1}}</view>
+            <view class="price">￥{{item.unused3}}</view>
+            <view class="endTime" >到期时间：{{item.rent_time}}</view>
+            <view class="status" wx:if="{{item.status==canceled}}">订单状态：订单取消</view>
+            <view class="status" wx:if="{{item.status==confirmed}}">订单状态：确认收获</view>
+            <view class="status" wx:if="{{item.status==payed}}">订单状态：买家已付款</view>
+            <view class="status" wx:if="{{item.status==finished}}">订单状态：交易完成</view>
+
+          </view>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+      <!--底部评价或查看评价按钮-->
+      <view class="Orderbottom">
+        <view class="callRenter" bindtap="communectionrenter1"  data-id="{{item}}">
+          <view><image class="callpicture" src="../images/call.png" /></view>
+          <view id="call" class="calltext">联系卖家</view>
+        </view>
+        <view class="but">
+          <view class="evaluate" bindtap="evaluatepage1" data-id="{{item}}" wx:if="{{item.status==payed}}">
+            <view class="button"><view class="evaluatebutton1">确认收货</view></view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage2"data-id="{{item}}" wx:elif="{{item.status==canceled}}">
+            <view class="evaluatebutton2" style="width:200rpx">交易关闭</view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage3" data-id="{{item}}" wx:elif="{{item.status==confirmed}}">
+            <view wx:if="{{item.cata==1}}"><view style="width: 170rpx;height: 50rpx;">待还书</view> </view>
+            <view wx:if="{{item.cata==0}}"><view class="button"><view class="evaluatebutton4">评价</view></view></view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage4" data-id="{{item}}" wx:elif="{{item.status==finished}}">
+            <view class="button"><view class="evaluatebutton4">评价</view></view>
+          </view>
+          
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<!--我卖出的-->
+<view wx:if="{{currentTab==1}}" >
+    <!--用户订单列表-->
+  <view class="OrderList" wx:for="{{Soldeditem}}"  data-index="{{idx}}">
+    <view >
+      <!--商品描述-->
+      <view class="Ordertop" bindtap="detail2" data-id="{{item}}">
+        <view class="left">
+          <view class="img">
+            <image class="bookimg" src="{{url+item.unused2}}"/>
+          </view>
+        </view>
+        <view class="right" >
+          <view class="BookDescription">
+            <view class="title">{{item.unused1}}</view>
+            <view class="price">￥{{item.unused3}}</view>
+            <view class="endTime">到期时间：{{item.rent_time}}</view>
+            <view class="status" wx:if="{{item.status==canceled}}">订单状态：订单取消</view>
+            <view class="status" wx:if="{{item.status==confirmed}}">订单状态：确认收获</view>
+            <view class="status" wx:if="{{item.status==payed}}">订单状态：买家已付款</view>
+            <view class="status" wx:if="{{item.status==finished}}">订单状态：交易完成</view>
+          </view>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+      <!--底部评价或查看评价按钮-->
+      <view class="Orderbottom">
+        <view class="callRenter" bindtap="communectionrenter2"  data-id="{{item}}">
+          <view><image class="callpicture" src="../images/call.png" /></view>
+          <view id="call" class="calltext">联系买家</view>
+        </view>
+        <view class="but">
+          <view class="evaluate" bindtap="evaluatepage5" data-id="{{item}}" wx:if="{{item.status==payed}}">
+            <view class="button"><view class="evaluatebutton1">关闭交易</view></view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage6" data-id="{{item}}" wx:elif="{{item.status==canceled}}">
+            <view class="evaluatebutton2" style="width:200rpx">交易关闭</view>
+          </view>
+          <view class="evaluate"   wx:elif="{{item.status==confirmed}}">
+            <view wx:if="{{item.cata==1}}">
+              <view class="button"><view class="evaluatebutton1" bindtap="itsevaluatepage7" data-id="{{item}}">确认归还</view></view>
+            </view>
+            <view wx:elif="{{item.cata==0}}">
+              <view style="width:170rpx;text-align:center">交易完成</view>
+            </view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage8" data-id="{{item}}" wx:elif="{{item.status==finished}}">
+            <view style="width:170rpx;text-align:center">交易完成</view>
+          </view>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+    </view>
+  </view>
+</view>
+
+<!--我发布的-->
+<view wx:elif="{{currentTab==2}}">
+  <view class="OrderList" wx:for="{{Solditem}}"data-index="{{idx}}">
+      <!--商品描述-->
+      <view >
+      <view class="Ordertop"bindtap="solddetail" data-id="{{item}}">
+        <view class="left">
+          <view class="img">
+            <image class="bookimg" src="{{url+item.picture}}"/>
+          </view>
+        </view>
+        <view class="right">
+          <view class="BookDescription">
+            <view class="title">{{item.book_name}}</view>
+            <view class="price">￥{{item.price}}</view>
+            <view class="endTime">到期时间：{{item.rent_time}}</view>
+            <view class="status" wx:if="{{item.status==posted}}">订单状态：在租/售</view>
+            <view class="status" wx:if="{{item.status==rented}}">订单状态：已租/售</view>
+          </view>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+      <!--底部评价或查看评价按钮-->
+      <view class="Orderbottom">
+        <view class="but">
+          <view class="evaluate" bindtap="evaluatepage9" data-id="{{item}}" wx:if="{{item.status==rented}}">
+            <view class="evaluatebutton1" style="width:200rpx;">已租/售</view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage10" data-id="{{item}}" wx:elif="{{item.status==posted}}">
+             <view class="button"><view class="evaluatebutton1" bindtap="itsevaluatepage8" data-id="{{item}}">下架</view></view>
+          </view>
+    
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine"></view>
+  </view>
+  </view>
+</view>

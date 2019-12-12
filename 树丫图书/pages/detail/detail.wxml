@@ -1,0 +1,86 @@
+<!--pages/order/detail.wxml-->
+<!-- detail.wxml -->
+<!-- 订单详情 -->
+
+<!-- 摘要信息 -->
+<view class="summary">
+	<image class="logo" src="../images/Fin.png" />
+	<view class="status">
+		<block wx:if="{{item.rentrecord.status == payed}}">已支付</block>
+		<block wx:elif="{{item.rentrecord.status == canceled}}">已取消</block>
+		<block wx:elif="{{item.rentrecord.status == confirmed}}">
+        <block wx:if="{{item.rentrecord.cata==0}}">已完成</block>
+        <block wx:elif="{{item.rentrecord.cata==1}}">待还书</block>
+    </block>
+    <block wx:elif="{{item.rentrecord.status == finished}}">已完成</block>
+	</view>
+	<!-- 订单操作 -->
+	      <view class="but">
+          <view class="evaluate" bindtap="evaluatepage1" wx:if="{{item.rentrecord.status==payed}}">
+            <view class="button"><view class="evaluatebutton1">确认收货</view></view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage2" wx:elif="{{item.rentrecord.status==canceled}}">
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage3"  wx:elif="{{item.rentrecord.status==confirmed}}">
+            <view wx:if="{{item.rentrecord.cata==0}}"><view class="button"><view class="evaluatebutton4">评价</view></view></view>
+          </view>
+          <view class="evaluate"  bindtap="itsevaluatepage4"  wx:elif="{{item.rentrecord.status==finished}}">
+            <view class="button"><view class="evaluatebutton4">评价</view></view>
+          </view>
+          
+        </view>
+
+</view>
+	<!-- 清单 -->
+
+<!-- 订单信息 -->
+<view class="common-info">
+	<view class="hd">书本详情</view>
+  <!--bookINfo-->
+  <view class="bookVie"  >
+  <view class="bookContainer" id='{{item.rentrecord.rent_id}}' bindtap="getMoreInfo"  >
+    <image class="bookPic" src='{{url+item.rentrecord.unused2}}'></image>
+    <view class="bookInfoVie">
+      <text style="hieght:33%" >{{item.rentrecord.unused1}}</text>
+      <view style='height:40rpx;' ></view>
+      <text class="bookinfo_text" >{{item.postedbook.book_author}}</text>
+      <view style="display:flex;flex-direction: row;align-items: center;" >
+      <text class="bookinfo_text" >￥{{item.rentrecord.unused3}}</text>
+        <image class="greenDotVie" src='../images/greenDot.png' ></image>
+        <text wx:if="{{item.rentrecord.cata==0}}" class="bookinfo_text_status" >已售</text>
+        <text wx:if="{{item.rentrecord.cata==1}}" class="bookinfo_text_status" >已租</text>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>
+
+<!-- 订单信息 -->
+<view class="common-info">
+	<view class="hd">订单详情</view>
+	<view class="bd">
+		<view class="label">订单号：</view>
+		<view class="content">{{item.rentrecord.rent_id}}</view>
+	</view>
+  <view class="bd">
+    <text wx:if="{{item.rentrecord.cata==0}}" class="label" >价格：</text>
+    <text wx:if="{{item.rentrecord.cata==1}}" class="label" >租金：</text>
+		<view class="content">{{item. rentrecord.unused3}}元</view>
+	</view>
+  <view class="bd" wx:if="{{item.rentrecord.cata==1}}" >
+    <text class="label" >押金：</text>
+		<view class="content">{{item. postedbook.price}}元</view>
+	</view>
+	<view class="bd">
+		<view class="label">买家电话：</view>
+		<view class="content" bindtap="callReceiver" data-telephone="{{item.saler_phone}}">{{item.saler_phone}}</view>
+	</view>
+  <view class="bd">
+		<view class="label">卖家电话：</view>
+		<view class="content" bindtap="callReceiver" data-telephone="{{item.buyer_phone}}">{{item.buyer_phone}}</view>
+	</view>
+	<view class="bd">
+		<view class="label">下单时间：</view>
+		<view class="content">{{item.rentrecord.rent_time}}</view>
+	</view>
+</view>

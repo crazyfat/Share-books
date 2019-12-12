@@ -1,0 +1,28 @@
+/* pages/money/money.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pic{
+  height: 120rpx;
+  width: 120rpx;
+}
+.texTitle{
+  margin-top: 40rpx;
+  font-size: 45rpx;
+}
+.tex{
+  margin-top: 40rpx;
+  font-size: 80rpx;
+  font-weight: bolder;
+}
+.But{
+  margin-top: 200rpx;
+  width: 300rpx;
+}
+.getMoney{
+  width: 300rpx;
+  color: green;
+  margin-top:30rpx;
+}

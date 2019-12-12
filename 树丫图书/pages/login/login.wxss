@@ -1,0 +1,29 @@
+/* pages/login/login.wxss */
+.pages{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoPic{
+  margin-top: 200rpx;
+  width: 80%;
+  height: 250rpx;
+}
+.buttonVie{
+  margin-top: 100rpx;
+  width: 80%;
+  height: 90rpx;
+  border-radius: 90rpx;
+  background-color: #abdd22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputVie{
+  width: 60%;
+  height: 90rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 4rpx;
+  border-color: #abdd22
+}

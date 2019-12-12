@@ -1,0 +1,212 @@
+
+page {
+	font-size: 16px;
+	color: #333;
+}
+
+/*头部*/
+.summary {
+	background: white;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+/*logo*/
+.summary .logo {
+	margin: 15px 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+/*状态*/
+.status {
+	margin: 5px;
+}
+
+/*操作*/
+.operate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 80%;
+	margin: 15px auto;
+}
+
+/*操作按钮*/
+.operate  {
+	width: 90px;
+	border-radius: 3px;
+	padding: 8px 13px;
+	margin: 15px;
+}
+
+.but{
+  justify-content: center;
+  margin-left: 37%
+}
+.button{
+  width: 200rpx;
+  height: 80rpx;
+  border: 1px solid #E0E3DA;
+  border-radius: 15rpx;
+  text-align:center;
+  justify-content: center;
+  background-color:#abdd22; 
+  display: flex;
+  align-items: center;
+}
+/*取消*/
+.operate .cancel {
+	background: white;
+	border: 1px solid #ccc;
+	color: #666;
+}
+
+/*支付*/
+.operate .payment {
+	background: #f60;
+	color: white;
+}
+
+
+/*.摘要信息*/
+
+/*实付*/
+.item .total {
+	width: 100%;
+	text-align: right;
+	padding-right: 10px;
+	color: #f60;
+}
+
+/*待支付*/
+.item .total:before {
+	content: "实付 ￥";
+}
+
+.info {
+	
+} 
+.areaClass{
+  width: 98%;
+  height: 100%;
+  text-indent: 2em;
+  text-align: left;
+  font-family: 'MI LANTING';
+}
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  background-color: white;
+}
+
+/*联系商家*/
+.contact {
+	width: 100px;
+	height: 20px;
+	margin: 8px auto;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	padding: 8px 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: #666;
+	font-size: 14px;
+}
+
+/*电话图标*/
+.telephone {
+	width: 20px;
+	height: 20px;
+}
+
+/*通用列表头*/
+.common-info {
+	margin-top: 10px;
+	color: #6e6e6e;
+	font-size: 14px;
+	background: white;
+}
+
+.common-info .hd {
+	padding: 14px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 6px;
+}
+
+.common-info .bd {
+	padding-left: 14px;
+	display: flex;
+	flex-direction: row;
+	align-items: top;
+	line-height: 220%;
+}
+
+/*模块标题*/
+.common-info .caption {
+	margin-left: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #333;
+	line-height: 200%;
+}
+
+.common-info .label {
+	width: 80px;
+}
+
+.common-info:last-child {
+	margin-bottom: 10px;
+}
+/*书本容器*/
+.bookVie{
+  width: 100%;
+  display: flex;
+  justify-content: center;  /*水平居中*/
+}
+.bookPic{
+  height: 200rpx;
+  width: 40%;
+  border-radius: 8rpx;
+}
+.bookContainer{
+  margin-top: 5%;
+  width: 84%;
+  padding: 3%;
+  background-color: white;
+   opacity: 0.97;
+  box-shadow:0px 2rpx 2rpx 2rpx #DDDDDD;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;      /*垂直居中*/
+}
+.bookInfoVie{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6%;
+
+}
+.bookinfo_text{
+  margin-top: 3%;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
+}
+.greenDotVie{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+.bookinfo_text_status{
+  margin-top: 3%;
+  margin-left: 6rpx;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
+}

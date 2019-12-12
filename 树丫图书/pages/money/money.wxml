@@ -1,0 +1,7 @@
+<view class="container" >
+  <image src="../images/pay.png" class="pic" ></image>
+  <text class="texTitle" >我的余额</text>
+  <text class="tex" >￥{{userInfo.balance}}</text>
+  <button class="But" type="primary" bindtap="charge" >充值</button>
+  <button class="getMoney"  bindtap="charge"  >提现</button>
+</view>

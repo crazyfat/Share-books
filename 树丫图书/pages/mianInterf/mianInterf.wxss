@@ -1,4 +1,7 @@
 @import '../../style/xiaomi.wxss';
+page{
+  background-color: #abdd2211
+}
 .miancontain{
   height: 100%;
   width:100%;
@@ -13,7 +16,7 @@
 .search{
  display: flex;
  border-radius:40rpx;
- background-color: rgb(248, 248, 248);
+ background-color: rgba(211, 211, 211, 0.322);
  padding-top: 10rpx;
  padding-bottom: 10rpx;
  padding-left: 40%;
@@ -128,8 +131,9 @@
   align-items: center;      /*垂直居中*/
 }
 .bookPic{
-  height: 260rpx;
-  width: 85%;
+  height: 200rpx;
+  width: 40%;
+  border-radius: 8rpx;
 }
 .bookName{
   margin-top: 10rpx;
@@ -143,7 +147,7 @@
   padding-right: 2%;
   padding-left: 2%;
 }
-..book_list2{
+.book_list2{
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -163,4 +167,46 @@
 .priceTe{
   font-size: 26rpx;
   color: #1ccf16;
+}
+/*这是新的cell容器*/
+.bookVie{
+  width: 100%;
+  display: flex;
+  justify-content: center;  /*水平居中*/
+}
+.bookContainer{
+  margin-top: 5%;
+  width: 84%;
+  padding: 3%;
+  background-color: white;
+   opacity: 0.97;
+  box-shadow:0px 2rpx 2rpx 2rpx #DDDDDD;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;      /*垂直居中*/
+}
+.bookInfoVie{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6%;
+
+}
+.bookinfo_text{
+  margin-top: 3%;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
+}
+.greenDotVie{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 40%;
+  margin-top: 2%;
+}
+.bookinfo_text_status{
+  margin-top: 3%;
+  margin-left: 6rpx;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
 }

@@ -1,23 +1,13 @@
-<view class="miancontain">
-  <view class="searchView">
-    <view class="search">
-      <image class="searchImage" src="../images/search.png"></image>
-      <text class="searchText" bindtap='search' >搜索</text>
-    </view>
+<view class="miancontain" >
+<view class="searchVie">
+  <view class="search">
+  <input class="input" placeholder='搜搜看你想要的书本吧' bindinput='searchBy' ></input>
   </view>
- 
-      <!--热门书
-      <view class="book_list1">
-        <view class="Abook">
-          <image class="bookPic" src='{{Bestseller[0].url}}'></image>
-          <text class="bookName">{{Bestseller[0].name}}</text>
-            <view class="price">
-          <image class="money" src='../images/Money.png'></image>
-          <text class="priceTe">{{Bestseller[0].price}}/期</text>
-          </view>
-        </view>
-      </view>
-      -->
+  <view class="searchBut">
+  <text style='color:white' bindtap='searchBk' >搜索</text>
+  </view>
+</view>
+
   <!--bookVie-->
   <view class="bookVie" wx:for="{{book}}"  wx:for-index="idx" >
   <view class="bookContainer" id='{{book[idx].rent_id}}' bindtap="getMoreInfo"  >
@@ -27,7 +17,7 @@
       <view style='height:40rpx;' ></view>
       <text class="bookinfo_text" >{{book[idx].book_author}}</text>
       <view style="display:flex;flex-direction: row;align-items: center;" >
-      <text class="bookinfo_text" >￥{{book[idx].price}}</text>
+      <text class="bookinfo_text" >{{book[idx].price}}￥</text>
     
       <image class="greenDotVie" src='../images/greenDot.png' ></image>
       <text wx:if="{{book[idx].cata==0}}" class="bookinfo_text_status" >在售</text>
@@ -36,6 +26,4 @@
     </view>
   </view>
   </view>
-
-
 </view>

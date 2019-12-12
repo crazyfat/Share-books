@@ -1,11 +1,19 @@
 {
+  "cloud": true,
   "pages": [
     "pages/mianInterf/mianInterf",
+    "pages/postOrders/postOrders",
+    "pages/money/money",
+    "pages/login/login",
+    "pages/bookInfo/bookInfo",
     "pages/News/News",
     "pages/Info/Info",
     "pages/Carp/Carp",
     "pages/Issue/Issue",
-    "pages/index/index"
+    "pages/search/search",
+    "pages/MyRentOrder/MyRentOrder",
+    "pages/index/index",
+    "pages/detail2/detail2"
   ],
   "window": {
     "backgroundTextStyle": "light",

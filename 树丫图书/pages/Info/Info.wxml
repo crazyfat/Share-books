@@ -1,9 +1,9 @@
 <!-- 个人信息 -->
 <view class="summary">
 	<!-- <view class="avatar-container"> -->
-		<image src="{{avatar ? avatar : '../images/Aoteman.jpg'}}" class="avatar" />
+		<image src="{{imageUrl}}" class="avatar" />
 	<!-- </view> -->
-		<view class="nickname">nickName</view>
+		<view  class="nickname">{{nickname}}</view>
 
 </view>
 <!-- 账户
@@ -27,23 +27,18 @@
 <!-- 管理员 -->
 <view class="listview" >
 <view class="item" style="border-top-left-radius: 10rpx;border-top-right-radius: 10rpx;" >
-		<image class="hd" src="../images/post.png" />
-		<navigator class="bd" url="../../address/list/list" open-type="navigate" hover-class="none">我的发布</navigator>
+		<image class="hd" src="../images/leftMoney.png" />
+		<navigator class="bd" url="../../pages/money/money" open-type="navigate" hover-class="none">我的余额</navigator>
 		<view class="ft"></view>
 	</view>
   <view class="item">
 		<image class="hd" src="../images/order.png" />
-		<view class="bd"  bindtap="contact">我的订单</view>
+		<navigator url="../../pages/MyRentOrder/MyRentOrder" class="bd"  bindtap="contact">我的订单</navigator>
 		<view class="ft"></view>
 	</view>
 	<view class="item">
 		<image class="hd" src="../images/kefu.png" />
 		<navigator class="bd" url="../../shop/setting/setting" open-type="navigate" hover-class="none">联系客服</navigator>
-		<view class="ft"></view>
-	</view>
-  <view class="item">
-		<image class="hd" src="../images/relog.png" />
-		<view class="bd"  bindtap="re_login">重新登录</view>
 		<view class="ft"></view>
 	</view>
 </view>

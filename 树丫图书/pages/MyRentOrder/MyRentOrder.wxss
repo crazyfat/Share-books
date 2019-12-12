@@ -1,0 +1,102 @@
+/* pages/Myrend/MyRendOrder.wxss */
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+  font-size: 30rpx;
+  color: #bbbbbb;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 90rpx;
+}
+.navbar .item.active{
+  color: #908df5;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5rpx;
+  background: #908df5;
+}
+.deleteorder{
+  margin-top:0rpx;
+  height: 50rpx;
+  border: 1px solid #E0E3DA;
+}
+.OrderList{
+  width: 90%;
+  margin-left: 5%;
+}
+.Ordertop{
+  margin-bottom: 10rpx;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-top:25rpx;
+}
+.left{
+  width: 80px;
+  height: 80px;
+}
+.price{
+  color: red;
+}
+.bookimg{
+  width: 80px;
+  height: 80px;
+  border-radius: 10rpx;
+}
+.Orderbottom{
+  align-items: center;
+  display: flex;
+  box-sizing:border-box;
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+}
+.callpicture{
+  height: 35rpx;
+  width: 35rpx;
+}
+.communectionrenter{
+   align-items: center;
+}
+.callRenter{
+  display: flex;
+}
+.divLine{
+ background: #E0E3DA;
+ width: 96%;
+ height: 3rpx;
+ margin-left: 2%;
+}
+.calltext{
+  width: 170rpx;
+  margin-left: 10rpx;
+}
+.button{
+  width: 200rpx;
+  height: 50rpx;
+  border: 1px solid #E0E3DA;
+  border-radius: 15rpx;
+  text-align:center;
+}
+.but{
+  margin-left: 35%;
+}
+.evaluate{
+  margin-left: 5%;
+}
+.BookDescription{
+  font-size: 30rpx 
+}
+.right{
+  margin-left: 20rpx;
+}

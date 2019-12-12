@@ -1,0 +1,9 @@
+<view class="pages" >
+  <image class="logoPic" src='../images/logo.png' ></image>
+  <input class="inputVie" placeholder='数字杭电账号：' ></input>
+  <input class="inputVie" placeholder='密码:' password='true' ></input>
+  <input class="inputVie" placeholder='电话:'  bindinput="getPhone" ></input>
+  <button class="buttonVie" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    <text style="font-size:44rpx;color:white;" >微信授权并登录</text>
+  </button>
+</view>
