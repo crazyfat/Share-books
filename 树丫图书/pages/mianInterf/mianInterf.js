@@ -6,29 +6,43 @@ Page({
    */
   data: {
     book:'',
-    url:"https://azhizhi.top"
+    url:"https://zhangyq.fun"
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  onShow:function(){
+    this.onLoad();
+  },
   onLoad: function (options) {
     
     var that=this
     wx.request({
-      url: 'https://azhizhi.top/searchrentbook',
+      url: 'https://zhangyq.fun/searchrentbook',
       data: {},
       method: 'GET', 
       success: function (res) {
         // success
+        var book = res.data;
+        book.reverse();
         that.setData({
-          book:res.data
+          book:book
         })
         console.log(that.data.book)
       }
     })
-
+    wx.request({
+      url: 'https://zhangyq.fun/user',
+      data: {
+        open_id: "ovcQ95WXYPkoxpmUuiH8P72kMsFI"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+      }
+    })
     
   },
   onPullDownRefresh() {

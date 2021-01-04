@@ -2,10 +2,14 @@
   "cloud": true,
   "pages": [
     "pages/mianInterf/mianInterf",
+    "pages/Wcomments/Wcomments",
+    
+    "pages/subOrder/subOrder",
+    "pages/userInfo/userInfo",
     "pages/postOrders/postOrders",
     "pages/money/money",
     "pages/login/login",
-    "pages/bookInfo/bookInfo",
+  "pages/bookInfo/bookInfo",
     "pages/News/News",
     "pages/Info/Info",
     "pages/Carp/Carp",
@@ -18,7 +22,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#abdd22",
-    "navigationBarTitleText": "树丫图书",
+    "navigationBarTitleText": "共享教材",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

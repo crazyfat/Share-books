@@ -1,0 +1,55 @@
+<view class="headVie">
+<view class="user">
+  <view class="head">
+    <image class="headPic" src="{{imageUrl}}" ></image>
+  </view>
+  <view class="userInfo">
+    <text style="font-size:50rpx;color:#fff" >{{nickName}}</text>
+    <text class="intro">17367079738</text>
+  </view>
+</view>
+<view class="textVie" >
+  <text class="bigtex" >{{user.idcardNum}}获赞</text>
+  <text class="bigtex" style="margin-left:5%;">{{user.userStdnum}}发布</text>
+  <text class="bigtex" style="margin-left:5%;">0卖出</text>
+</view>
+</view>
+<!--choose top tabbar-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"     bindtap="navbarTap">{{item}}</text>
+</view>
+<!--他的发布-->
+  <view class="bookVie" wx:for="{{book}}"  wx:for-index="idx" wx:if="{{currentTab==0}}" >
+  <view class="bookContainer" id='{{book[idx].rent_id}}' bindtap="getMoreInfo"  >
+    <view class="container2">
+    <image lazy-load="true" class="bookPic" src='{{url+book[idx].picture}}'></image>
+    <view class="bookInfoVie">
+      <text style="hieght:33%" class="bookname" >{{book[idx].book_name}}</text>
+      <view style='height:40rpx;' ></view>
+      <text class="bookinfo_text" >{{book[idx].book_author}}</text>
+      <view style="display:flex;flex-direction: row;align-items: center;" >
+      <text class="bookinfo_text" >￥{{book[idx].price}}</text>
+    
+      <image class="greenDotVie" src='../images/greenDot.png' ></image>
+      <text wx:if="{{book[idx].cata==0}}" class="bookinfo_text_status" >在售</text>
+      <text wx:if="{{book[idx].cata==1}}" class="bookinfo_text_status" >在租</text>
+      </view>
+    </view>
+    </view>
+  </view>
+  </view>
+
+<!--他的发布-->
+  <view class="bookVie" wx:for="{{comment}}"  wx:for-index="idx" wx:if="{{currentTab==1}}" >
+  <view class="bookContainer" id='{{book[idx].rent_id}}' bindtap="getMoreInfo"  >
+    <view class="container3">
+      <text >{{comment[idx].comments}}</text>
+      <view class="starVie">
+        <block wx:for="{{comment[idx].star}}" wx:key="index">
+          <image class="star" id='{{index+1}}' data-in='use_sc1' src='../images/redstar.png'></image>
+      </block>
+      </view>
+    </view>
+  </view>
+  </view>
+  

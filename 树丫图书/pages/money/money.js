@@ -18,7 +18,7 @@ Page({
     var that = this;
     var openid = wx.getStorageSync('openid');
     wx.request({
-      url: 'https://azhizhi.top/user',
+      url: 'https://zhangyq.fun/user',
       data: {
         open_id: openid,
       },

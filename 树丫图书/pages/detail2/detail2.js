@@ -6,7 +6,7 @@ Page({
    */
   data: {
     item: {},
-    url: "https://azhizhi.top",
+    url: "https://zhangyq.fun",
     rented: "rented",
     canceled: "canceled",
     payed: "payed",
@@ -24,7 +24,7 @@ Page({
     var item = wx.getStorageSync("bookdetailitem")
     var that = this
     wx.request({
-      url: 'https://azhizhi.top/detailRecord',
+      url: 'https://zhangyq.fun',
       method: 'Get',
       data: {
         rent_recorder_id: item.rent_recorder_id
@@ -95,7 +95,7 @@ Page({
   evaluatepage5: function (e) {
     var that = this
     wx.request({
-      url: 'http://101.200.149.111:80/refuse',
+      url: 'https://zhangyq.fun/refuse',
       method: 'GET',
       data: {
         rent_id: that.data.item.rentrecord.rent_id,
@@ -121,7 +121,7 @@ Page({
   itsevaluatepage7: function (e) {
     var that = this
     wx.request({
-      url: 'http://101.200.149.111:80/confirm_send_back',
+      url: 'httpss://101.200.149.111:80/confirm_send_back',
       method: 'GET',
       data: {
         rent_id: that.data.item.rentrecord.rent_id,
@@ -149,7 +149,7 @@ Page({
     var openid = wx.getStorageSync("openid")
 
     wx.request({
-      url: 'http://101.200.149.111:80/deleteposted',
+      url: 'httpss://101.200.149.111:80/deleteposted',
       method: 'GET',
       data: {
         rent_id: that.data.item.rentrecord.rent_id,

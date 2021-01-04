@@ -1,0 +1,93 @@
+<!--用户信息-->
+
+<view class="user">
+  <view class="head">
+    <image class="headPic" src="{{userInfo.avatarUrl}}" ></image>
+  </view>
+  <view class="userInfo">
+    <text style="font-size:35rpx" >{{userInfo.nickName}}</text>
+    <text class="intro">17367079738</text>
+  </view>
+</view>
+<image src="../images/mail.png" class="mail" mode="widthFix" />
+<view style="height:20rpx;background-color:rgb(222, 222, 222);margin-top:14rpx;" ></view>
+<!-- 订单信息 -->
+<view class="common-info">
+	<view class="hd">书本详情</view>
+  <!--bookINfo-->
+  <view class="bookVie"  >
+  <view class="bookContainer" id='{{item.rent_id}}' bindtap="getMoreInfo"  >
+    <image class="bookPic" src='{{url+item.picture}}'></image>
+    <view class="bookInfoVie">
+      <text style="hieght:33%;font-size:40rpx;" >{{item.book_name}}</text>
+      <text class="bookinfo_text" >{{item.book_author}}</text>
+      <view style="display:flex;flex-direction: row;align-items: center;" >
+      <text class="bookinfo_text" >￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+  </view>
+  <!-- 订单总价(租） -->
+  <view wx:if="{{options.cata==1}}" >
+  <view class="hd2">
+    <text class="tag" >租期</text>
+    <view class="rightPrice">
+      <text class="price" >{{options.rent_time}}天</text>
+    </view>
+  </view>
+  <view class="hd2">
+    <text class="tag" >租金</text>
+    <view class="rightPrice">
+      <text class="price" >{{item.price}}元</text>
+    </view>
+  </view>
+  <view class="hd2">
+    <text class="tag" >押金</text>
+    <view class="rightPrice">
+      <text class="price" >{{item.deposit}}元</text>
+    </view>
+  </view>
+  <view style="height:1rpx;background-color:rgb(202, 202, 202);margin-top:14rpx;" ></view>
+  <view class="totalPrice" >
+    总计：{{item.price*options.rent_time+item.deposit}}元
+  </view>
+  </view>
+   <!-- 订单总价(卖） -->
+  <view wx:if="{{options.cata==0}}" >
+  <view class="hd2">
+    <text class="tag" >价格</text>
+    <view class="rightPrice">
+      <text class="price" >{{item.price}}元</text>
+    </view>
+  </view>
+  <view style="height:1rpx;background-color:rgb(202, 202, 202);margin-top:14rpx;" ></view>
+  <view class="totalPrice" >
+    总计：{{item.price}}元
+  </view>
+  </view>
+
+</view>
+<view style="height:20rpx;background-color:rgb(222, 222, 222);margin-top:14rpx;" ></view>
+<!-- 订单信息 -->
+<view class="hd2">
+  <text class="Location">交易地址:</text>
+  <view class="rightLocation">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+</view>
+</picker>
+</view>
+</view>
+<view style="height:80rpx;background-color:rgb(222, 222, 222);margin-top:14rpx;" ></view>
+<view class="subButton" >
+  <view class='rightBut' wx:if="{{options.cata==1}}" >
+  总计：{{item.price*options.rent_time+item.deposit}}元
+  </view>
+  <view class='rightBut' wx:if="{{options.cata==0}}" >
+  总计：{{item.price}}元
+  </view>
+  <view class="leftBut" bindtap="pay" >
+  提交订单
+  </view>
+</view>

@@ -17,12 +17,14 @@
         <view class="right" >
           <view class="BookDescription">
             <view class="title">{{item.unused1}}</view>
+            <view class="status" >订单号：{{item.rent_id}}</view>
+     
+            <view class="status" wx:if="{{item.status==canceled}}">订单取消</view>
+            <view class="status" wx:if="{{item.status==confirmed}}">确认收货</view>
+            <view class="status" wx:if="{{item.status==payed}}">买家已付款</view>
+            <view class="status" wx:if="{{item.status==finished}}">交易完成</view>
+            <view class="status" wx:if="{{item.status==realFinished}}">交易完成</view>
             <view class="price">￥{{item.unused3}}</view>
-            <view class="endTime" >到期时间：{{item.rent_time}}</view>
-            <view class="status" wx:if="{{item.status==canceled}}">订单状态：订单取消</view>
-            <view class="status" wx:if="{{item.status==confirmed}}">订单状态：确认收获</view>
-            <view class="status" wx:if="{{item.status==payed}}">订单状态：买家已付款</view>
-            <view class="status" wx:if="{{item.status==finished}}">订单状态：交易完成</view>
 
           </view>
         </view>
@@ -76,12 +78,11 @@
         <view class="right" >
           <view class="BookDescription">
             <view class="title">{{item.unused1}}</view>
+            <view class="status" >订单号：{{item.rent_id}}</view>
+            <view class="status" wx:if="{{item.status==confirmed}}">确认收货</view>
+            <view class="status" wx:if="{{item.status==payed}}">买家已付款</view>
+            <view class="status" wx:if="{{item.status==finished}}">交易完成</view>
             <view class="price">￥{{item.unused3}}</view>
-            <view class="endTime">到期时间：{{item.rent_time}}</view>
-            <view class="status" wx:if="{{item.status==canceled}}">订单状态：订单取消</view>
-            <view class="status" wx:if="{{item.status==confirmed}}">订单状态：确认收获</view>
-            <view class="status" wx:if="{{item.status==payed}}">订单状态：买家已付款</view>
-            <view class="status" wx:if="{{item.status==finished}}">订单状态：交易完成</view>
           </view>
         </view>
       </view>
@@ -133,10 +134,10 @@
         <view class="right">
           <view class="BookDescription">
             <view class="title">{{item.book_name}}</view>
-            <view class="price">￥{{item.price}}</view>
-            <view class="endTime">到期时间：{{item.rent_time}}</view>
+            <view class="status" >订单号：{{item.rent_id}}</view>
             <view class="status" wx:if="{{item.status==posted}}">订单状态：在租/售</view>
             <view class="status" wx:if="{{item.status==rented}}">订单状态：已租/售</view>
+            <view class="price">￥{{item.price}}</view>
           </view>
         </view>
       </view>

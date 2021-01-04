@@ -19,6 +19,33 @@
       </view>
       -->
   <!--bookVie-->
+
+
+  <view class="bookVie" wx:for="{{book}}"  wx:for-index="idx" >
+  <view class="bookContainer" id='{{book[idx].rent_id}}' bindtap="getMoreInfo"  >
+    <view class="container2">
+    <image lazy-load="true" class="bookPic" src='{{url+book[idx].picture}}'></image>
+    <view class="bookInfoVie">
+      <text style="hieght:33%" class="bookname" >{{book[idx].book_name}}</text>
+      <view style='height:40rpx;' ></view>
+      <text class="bookinfo_text" >{{book[idx].book_author}}</text>
+      <view style="display:flex;flex-direction: row;align-items: center;" >
+      <text class="bookinfo_text" >￥{{book[idx].price}}</text>
+    
+      <image class="greenDotVie" src='../images/greenDot.png' ></image>
+      <text wx:if="{{book[idx].cata==0}}" class="bookinfo_text_status" >在售</text>
+      <text wx:if="{{book[idx].cata==1}}" class="bookinfo_text_status" >在租</text>
+      </view>
+    </view>
+    </view>
+    <image src="../images/mail.png" class="mail" mode="widthFix" />
+    <view class="solder">
+      <image class="headPic" src="{{book[idx].unused2}}" bindtap="add_like" ></image>
+      <text class="name" >{{book[idx].unused1}}</text>
+    </view>
+  </view>
+  </view>
+<!--示例
   <view class="bookVie" wx:for="{{book}}"  wx:for-index="idx" >
   <view class="bookContainer" id='{{book[idx].rent_id}}' bindtap="getMoreInfo"  >
     <image class="bookPic" src='{{url+book[idx].picture}}'></image>
@@ -36,6 +63,5 @@
     </view>
   </view>
   </view>
-
-
+-->
 </view>

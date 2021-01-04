@@ -1,8 +1,16 @@
 <view class="pages" >
+<!--
   <image class="logoPic" src='../images/logo.png' ></image>
-  <input class="inputVie" placeholder='数字杭电账号：' ></input>
-  <input class="inputVie" placeholder='密码:' password='true' ></input>
-  <input class="inputVie" placeholder='电话:'  bindinput="getPhone" ></input>
+-->
+<view class="addVie" >
+  <image class="sharePic" src='../images/shareIma.png' ></image>
+  <text class="titlt" >共享图书</text>
+</view>  
+  <input class="inputVie_top" placeholder='电话号码：'  bindinput="getPhone" ></input>
+  <view class="codeVie" >
+  <input class="inputVie" placeholder='输入验证码：' bindinput="getCode" ></input>
+  <button class='codeBtn' bindtap='getSmsCaptcha' disabled='{{captchaDisabled}}'>{{captchaTxt}}</button>
+  </view>
   <button class="buttonVie" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
     <text style="font-size:44rpx;color:white;" >微信授权并登录</text>
   </button>

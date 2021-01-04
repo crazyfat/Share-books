@@ -1,10 +1,14 @@
 /* pages/login/login.wxss */
 .pages{
+  height: 1220rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(https://up.enterdesk.com/edpic/70/3e/4c/703e4ccb52d42af39cfe80cea0f59ba7.jpg);
+  background-size: 100% 100%;
 }
+/*到时候删除这个背景*/
 .logoPic{
   margin-top: 200rpx;
   width: 80%;
@@ -21,9 +25,65 @@
   align-items: center;
 }
 .inputVie{
+
+}
+/*以下都不要*/
+.titlt{
+  font-size: 60rpx;
+ 
+  
+}
+.sharePic{
+  height: 100rpx;
+  width: 100rpx;
+}
+.addVie{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 200rpx;
+   margin-top: 220rpx;
+}
+.getCode{
+  height: 80%;
+  width: 30%;
+  background-color: white;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.inputVie_top{
   width: 60%;
   height: 90rpx;
   border-bottom-style: solid;
-  border-bottom-width: 4rpx;
-  border-color: #abdd22
+  border-width: 2rpx;
+  border-color: rgb(204, 204, 204);
+  border-radius: 30rpx;
+  margin-top: 0rpx;
+  padding-left: 20rpx;
+  background-color: white
+}
+.codeBtn{
+  right: 0;
+  top: 0;
+  width: 70%;
+  font-size: 30rpx;
+  height: 100%;
+  border-top-right-radius: 31rpx;
+  border-bottom-right-radius: 30rpx;
+  line-height: 80rpx;
+}
+.codeVie{
+  width: 60%;
+  height: 90rpx;
+  border-bottom-style: solid;
+  border-width: 2rpx;
+  border-color: rgb(204, 204, 204);
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+  padding-left: 20rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

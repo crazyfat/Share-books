@@ -7,7 +7,7 @@ Page({
   data: {
     navbar:["我买(租)到的","我卖(租)出的","我发布的"],
     currentTab: 0,
-    url: "https://azhizhi.top",
+    url: "https://zhangyq.fun",
     Buyitem:[],
     Solditem:[],
     Soldeditem:[],
@@ -36,11 +36,13 @@ Page({
       phone:this.phone
     })
   },
-  onLoad:function(){},
+  onShow:function(){
+    var that = this;
+    that.onLoad();
+  },
   //detail
   detail:function(e){
     var item = e.currentTarget.dataset.id
-    console.log(item)
     wx.setStorageSync("bookdetailitem", item)
     wx.navigateTo({
       url: '../detail/detail',
@@ -48,7 +50,6 @@ Page({
   },
   detail2: function (e) {
     var item = e.currentTarget.dataset.id
-    console.log(item)
     wx.setStorageSync("bookdetailitem", item)
     wx.navigateTo({
       url: '../detail2/detail2',
@@ -58,13 +59,12 @@ Page({
   communectionrenter1:function(e){
     var that=this;
     var item = e.currentTarget.dataset.id
-    console.log("idx:"+item)
     var rent_recorder_id = item.rent_recorder_id
     that.setData({
       rent_recorder_id: rent_recorder_id
     })
     wx.request({
-      url: 'https://azhizhi.top/detailRecord',
+      url: 'https://zhangyq.fun/detailRecord',
       method: 'Get',
       data: {
         rent_recorder_id: that.data.rent_recorder_id
@@ -75,7 +75,6 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res)
         that.setData({
           phone : res.data.saler_phone
         })
@@ -83,7 +82,6 @@ Page({
       }
 
     })
-    console.log(that.data.phone)
     wx.makePhoneCall({
       phoneNumber:that.data.phone,
     })
@@ -91,13 +89,12 @@ Page({
   communectionrenter2: function (e) {
     var that = this;
     var item = e.currentTarget.dataset.id
-    console.log("idx:" + item)
     var rent_recorder_id = item.rent_recorder_id
     that.setData({
       rent_recorder_id: rent_recorder_id
     })
     wx.request({
-      url: 'https://azhizhi.top/detailRecord',
+      url: 'https://zhangyq.fun/detailRecord',
       method: 'Get',
       data: {
         rent_recorder_id: that.data.rent_recorder_id
@@ -108,7 +105,6 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res)
         that.setData({
           phone: res.data.buyer_phone
         })
@@ -116,7 +112,6 @@ Page({
       }
 
     })
-    console.log(that.data.phone)
     wx.makePhoneCall({
       phoneNumber: that.data.phone,
     })
@@ -130,7 +125,7 @@ Page({
     var openid=wx.getStorageSync("openid")
     //获取我买到的列表数据
     wx.request({
-      url: 'https://azhizhi.top/rent_history',
+      url: 'https://zhangyq.fun/rent_history',
       method: 'Get',
       data: {
         open_id: openid,
@@ -141,9 +136,11 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        var item = res.data;
+        item.reverse();
+        console.log(item)
         that.setData({
-         Orderitem:res.data
+         Orderitem:item
         })
       }
     })
@@ -151,7 +148,7 @@ Page({
 
     //获取我发发布的列表数据
     wx.request({
-      url: 'https://azhizhi.top/postedhistory',
+      url: 'https://zhangyq.fun/postedhistory',
       method: 'Get',
       data: {
         open_id: openid,
@@ -162,16 +159,17 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        var Solditem = res.data;
+        Solditem.reverse();
         that.setData({
-          Solditem: res.data
+          Solditem: Solditem
         })
       }
     })
     
     //我卖出的
     wx.request({
-      url: 'https://azhizhi.top/userpostedstatus',
+      url: 'https://zhangyq.fun/userpostedstatus',
       method: 'GET',
       data: {
         open_id: openid,
@@ -182,9 +180,10 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
+        var Soldeditem = res.data;
+        Soldeditem.reverse();
         that.setData({
-          Soldeditem: res.data
+          Soldeditem: Soldeditem
         })
       }
     })
@@ -204,7 +203,21 @@ Page({
   onShow: function () {
 
   },
+  //我买到评论
+  itsevaluatepage3 :function(e){
+    var item = e.currentTarget.dataset.id
 
+    wx.navigateTo({
+      url: '../Wcomments/Wcomments?id=' + item.rent_recorder_id,
+    })
+  },
+  itsevaluatepage4: function (e) {
+    var item = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: '../Wcomments/Wcomments?id=' + item.rent_recorder_id,
+    })
+  },
   //修改订单状态
   evaluatepage1: function (e) {
     var item = e.currentTarget.dataset.id
@@ -212,9 +225,8 @@ Page({
     this.setData({
       rent_recorder_id: item.rent_recorder_id
     })
-    console.log(that.data.rent_recorder_id)
     wx.request({
-      url: 'https://azhizhi.top/confirmed',
+      url: 'https://zhangyq.fun/confirmed',
       method: 'GET',
       data: {
         rent_recorder_id: that.data.rent_recorder_id,
@@ -241,9 +253,8 @@ Page({
     this.setData({
       rent_id:item.rent_id
     })
-    console.log(that.data.rent_id)
     wx.request({
-      url: 'https://azhizhi.top/refuse',
+      url: 'https://zhangyq.fun/refuse',
       method: 'GET',
       data: {
         rent_id: that.data.rent_id,
@@ -271,7 +282,7 @@ Page({
       rent_id: item.rent_id
     })
     wx.request({
-      url: 'https://azhizhi.top/confirm_send_back',
+      url: 'https://zhangyq.fun/confirm_send_back',
       method: 'GET',
       data: {
         rent_id: this.data.rent_id,
@@ -301,7 +312,7 @@ Page({
       rent_id: item.rent_id
     })
     wx.request({
-      url: 'https://azhizhi.top/deleteposted',
+      url: 'https://zhangyq.fun/deleteposted',
       method: 'GET',
       data: {
         rent_id: that.data.rent_id,
@@ -318,7 +329,6 @@ Page({
           icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
           duration: 2000
         })
-        console.log(that.data.rent_id)
         that.onLoad();
       }
 

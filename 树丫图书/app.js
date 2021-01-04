@@ -35,5 +35,24 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  Promise: function (promise) {
+    let APIURL = 'https://azhizhi.top/';
+    return new Promise(function (resolve, reject) {
+      wx.request({
+        url: APIURL + promise.url,
+        data: promise.data,
+        method: promise.method,
+        success(res) {
+          if (res.statusCode === 200) 
+              console.log(res.data)
+              resolve(res.data);
+        },
+        fail(e) {
+          wx.showToast({ title: "网络异常", icon: 'none', duration: 1500 });
+          reject(e)
+        }
+      });
+    })
+  },
 })

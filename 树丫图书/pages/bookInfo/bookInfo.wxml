@@ -1,27 +1,19 @@
 
 <view class="topPicVie">
-<swiper class="bookPic" indicator-dots='true'  autoplay='true'>
-<swiper-item class="bookPic" >
   <image class="Pic" src='{{book.pic}}' ></image>
-</swiper-item>
-<swiper-item class="bookPic">
-  <image class="Pic" src='{{url+bookInfo.picture}}' ></image>
-</swiper-item>
-</swiper>
 </view>
 <view style='display:flex;  flex-direction: row;  align-items: center;width:94%;padding:3%;padding-bottom:1%' >
-  <text class="bookName" >{{book.book_name}}</text>
+  <text class="bookName" >{{book.title}}</text>
   <text class="bookPrice" >￥{{bookInfo.price}}</text>
 </view>
 <view style='display:flex;  flex-direction: row;  align-items: center;padding-left:3%' >
   <text class="isbnVie" >{{bookInfo.isbn}}</text>
 </view>
-<view style='display:flex;  flex-direction: row;  align-items: center;width:94%;padding-left:3%' >
-  <text decode="ensp" class="detailInfo" >{{book.author}} |&ensp;</text>
-  <text decode="ensp" class="detailInfo" >{{book.publisher}} |&ensp;</text>
-  <text decode="ensp" class="detailInfo" >九成新</text>
+<view style='display:flex;  flex-direction: column;  align-items: right;width:94%;padding-left:3%' >
+  <text decode="ensp" class="detailInfo" >{{book.author}}</text>
+  <text decode="ensp" class="detailInfo" >{{book.publisher}}</text>
 </view>
-<view style='display:flex;  flex-direction: row;  align-items: center;width:94%;padding-left:3%' >
+<view style='display:flex;  flex-direction: row;  align-items: center;width:94%;padding-left:3%;margin-top:3%;' >
   <image class="greenDotVie" src='../images/greenDot.png' ></image>
   <text wx:if="{{bookInfo.cata==1}}"  decode="ensp" class="rentVie" >&ensp;在租 |&ensp;</text>
   <text wx:if="{{bookInfo.cata==0}}" decode="ensp" class="rentVie" >&ensp;在售</text>
@@ -31,14 +23,44 @@
 <view class="lineVie" ></view>
   <textarea disabled='true' class="bookintro" > 
 {{book.summary}}</textarea>
-
-<view class="lineVie" ></view>
-<view class="cartVie">
-  <image class="call" src="../images/call.png" bindtap="callowner" ></image>
-  <button type="primary" class="buyBut" bindtap="confirm">
-    订购书本
-  </button>
+<view class="lineVie2" ></view>
+<!--用户信息-->
+<view class="user">
+  <view class="head">
+    <image class="headPic" src="{{bookInfo.unused2}}" ></image>
+  </view>
+  <view class="userInfo">
+    <text class="name" >{{bookInfo.unused1}}</text>
+    <text class="intro">{{user.userTelNum}}</text>
+  </view>
+  <view class="sociaty">
+    <text class="day"> 发布：{{user.userStdnum}}本</text>
+    <text class="day">获赞：{{user.idcardNum}}个</text>
+  </view>
 </view>
+<!--用户信息-->
+<view class="cartVie">
+    <view class="botLeft">
+    <view wx:if="{{likeStatus==1}}" class="zanVie">
+      <image  class="zanPic" src="../images/islike.png" ></image>
+      <text class="zanTex" >{{likeNum}}</text>
+    </view>
+    <view wx:if="{{likeStatus==0}}" class="zanVie" bindtap="getLike">
+      <image  class="zanPic" src="../images/zan.png" ></image>
+      <text class="zanTex" >{{likeNum}}</text>
+    </view>
+    <view class="zanVie" bindtap="go2contract">
+      <image class="zanPic" src="../images/contract.png"  bindtap="reorder"></image>
+      <text class="zanTex" >联系</text>
+    </view>
+  </view>
+  <view class="botRight">
+      <view class="receiptBut">
+        <text class="receiptTe" bindtap="confirm">订购</text>
+      </view>
+  </view>
+</view>
+
 <!--租期提示！-->
 <view class='toast-box' hidden="{{hidedata}}" >
         <view class='toastbg'></view>

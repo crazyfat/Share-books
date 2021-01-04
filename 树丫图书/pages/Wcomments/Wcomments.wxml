@@ -1,0 +1,69 @@
+<view class="top" >
+<!-- 订单信息 -->
+<view class="common-info">
+  <!--bookINfo-->
+  <view class="bookVie"  >
+  <view class="bookContainer" id='{{item.rentrecord.rent_id}}' bindtap="getMoreInfo"  >
+    <image class="bookPic" src='{{url+item.rentrecord.unused2}}'></image>
+    <view class="bookInfoVie">
+      <text class="title" style="hieght:33%" >{{item.rentrecord.unused1}}</text>
+      <view style='height:40rpx;' ></view>
+      <text class="bookinfo_text" >{{item.postedbook.book_author}}</text>
+      <view style="display:flex;flex-direction: row;align-items: center;" >
+      <text class="bookinfo_text" >￥{{item.rentrecord.unused3}}</text>
+        <image class="greenDotVie" src='../images/greenDot.png' ></image>
+        <text wx:if="{{item.rentrecord.cata==0}}" class="bookinfo_text_status" >已售</text>
+        <text wx:if="{{item.rentrecord.cata==1}}" class="bookinfo_text_status" >已租</text>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>
+<view class="topStarVie">
+<view class="discr">书本质量</view>
+<view style="width:20rpx;" ></view>
+<block wx:for="{{one_2}}" wx:key="index">
+<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='../images/redstar.png'></image>
+</block>
+<block wx:for="{{two_2}}" wx:key="index">
+<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='../images/blockStar.png'></image>
+</block>
+<view style="width:20rpx;" ></view>
+<view class="discr" >{{one_2}}星</view>
+</view>
+<!--下边是评论框-->
+<view class="conmentsVie" >
+  <textarea class="commentTex" placeholder="给卖家和商品一个评论吧！" bindinput="detailInput" >
+  </textarea>
+</view>
+</view>
+<view class="bottom">
+<text class="solderName">张元庆</text>
+<!---->
+<view class="topStarVie">
+<view class="discr">卖家服务</view>
+<view style="width:20rpx;" ></view>
+<block wx:for="{{one_1}}" wx:key="index">
+<image catchtap='in_xinsed' id='{{index+1}}' data-in='use_sc1' src='../images/redstar.png'></image>
+</block>
+<block wx:for="{{two_1}}" wx:key="index">
+<image catchtap='in_xinsed' id='{{index+1}}' data-in='use-s' src='../images/blockStar.png'></image>
+</block>
+<view style="width:20rpx;" ></view>
+<view class="discr" >{{one_1}}星</view>
+</view>
+<!---->
+<view class="topStarVie">
+<view class="discr">交易评分</view>
+<view style="width:20rpx;" ></view>
+<block wx:for="{{one}}" wx:key="index">
+<image catchtap='in_xinthr' id='{{index+1}}' data-in='use_sc' src='../images/redstar.png'></image>
+</block>
+<block wx:for="{{two}}" wx:key="index">
+<image catchtap='in_xinthr' id='{{index+1}}' data-in='use' src='../images/blockStar.png'></image>
+</block>
+<view style="width:20rpx;" ></view>
+<view class="discr" >{{one}}星</view>
+</view>
+</view>
+<view class="submitCommentBut" bindtap="submitComment" >提交评论</view>

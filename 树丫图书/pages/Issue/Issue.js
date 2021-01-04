@@ -28,7 +28,8 @@ Page({
   },
   cancle:function(){
     this.setData({
-      hide:false
+      hide:false,
+      pics:[]
     })
   },
   getBookisbn: function (e) {
@@ -107,12 +108,15 @@ Page({
     }
     console.log(that.data.pics[0])
     var openid = wx.getStorageSync('openid');
+    var userInfo = wx.getStorageSync('userInfo')
+    var nickname = userInfo.nickName;
+    var imageurl = userInfo.avatarUrl
     wx.uploadFile({
-      url:'https://azhizhi.top/bookupdate',
+      url:'https://zhangyq.fun/bookupdate',
       filePath: that.data.pics[0],
       name: 'picture',
       formData:{
-        rent_user_id:openid,
+        rent_user_id:openid        ,//修改i
         book_name: that.data.bookInfo.title,
         book_author: that.data.bookInfo.author,
         isbn: that.data.isbnCode,
@@ -120,6 +124,9 @@ Page({
         deposit: that.data.deposit,
         rent_time: that.data.rentTime,
         cata: that.data.index,
+        unused1:nickname,
+        unused2:imageurl,
+        unused3:0
 
       },
       header:{
@@ -164,7 +171,7 @@ Page({
   getInfoByIsbn:function(){
     var that = this
     wx.request({
-      url: 'https://azhizhi.top/booktype?',
+      url: 'https://zhangyq.fun/booktype?',
       data: {
         isbn: that.data.isbnCode
       },

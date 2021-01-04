@@ -1,5 +1,5 @@
 <!-- 个人信息 -->
-<view class="summary">
+<view class="summary" bindtap="getuserInfo">
 	<!-- <view class="avatar-container"> -->
 		<image src="{{imageUrl}}" class="avatar" />
 	<!-- </view> -->

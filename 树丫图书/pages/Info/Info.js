@@ -30,6 +30,11 @@ Page({
         imageUrl: userInfo.avatarUrl
       })
     }
+  },
+  getuserInfo:function(){
+    wx.navigateTo({
+      url: '/pages/userInfo/userInfo'
+    })
   }
 
 

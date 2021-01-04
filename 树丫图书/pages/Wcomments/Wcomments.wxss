@@ -1,0 +1,132 @@
+/* pages/test/test.wxss */
+Page{
+  background-color: rgb(212, 212, 212);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.top{
+  width: 95%;
+  background-color: #fff;
+  padding-bottom: 40rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+image{
+  height: 60rpx;
+  width: 60rpx;
+  display: inline-block
+}
+/*书本容器*/
+.bookVie{
+  width: 100%;
+  display: flex;
+  justify-content: center;  /*水平居中*/
+}
+.bookPic{
+  height: 200rpx;
+  width: 40%;
+  border-radius: 8rpx;
+}
+.title{
+    font-size: 40rpx;
+    display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:1;
+}
+.bookContainer{
+  margin-top: 5%;
+  width: 84%;
+  padding: 3%;
+  background-color: white;
+   opacity: 0.97;
+  box-shadow:0px 2rpx 2rpx 2rpx #DDDDDD;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;      /*垂直居中*/
+}
+.bookInfoVie{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6%;
+
+}
+.bookinfo_text{
+  margin-top: 3%;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
+}
+.greenDotVie{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+.bookinfo_text_status{
+  margin-top: 3%;
+  margin-left: 6rpx;
+  font-size: 35rpx;
+  color: rgb(124, 124, 124);
+}
+
+/*接下来都是新增的*/
+.topStarVie{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  align-items: center;
+}
+.discr{
+  font-size: 38rpx;
+  color:rgb(100, 100, 100)
+}
+.conmentsVie{
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.commentTex{
+  width: 85%;
+  height: 270rpx;
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: rgb(190, 190, 190);
+  border-radius: 30rpx;
+  padding: 3%;
+}
+.bottom{
+  margin-top: 20rpx;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+
+}
+.solderName{
+  margin-left: 5%;
+  font-size: 40rpx;
+  margin-top:20rpx;
+}
+.submitCommentBut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  height: 80rpx;
+  width: 95%;
+  background-color: #abdd22;
+  font-size: 40rpx;
+  color: #fff;
+  border-radius: 30rpx;
+}

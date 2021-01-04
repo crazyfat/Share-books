@@ -1,3 +1,53 @@
+/*user*/
+.headVie{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+  background-image: url(http://pic1.win4000.com/wallpaper/3/596d78d5d2cb1.jpg);
+  background-size: 100% 100%; 
+}
+.user{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.head{
+  margin-top: 10rpx;
+  display: flex;
+  padding: 3%;
+}
+.headPic{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 50%;
+}
+.userInfo{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10rpx;
+  align-items: right;
+}
+.intro{
+  font-size: 30rpx;
+  color: #fff;
+}
+/*文字超赞，发布，卖出*/
+.textVie{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+}
+.bigtex{
+  font-size: 40rpx;
+  color: #fff;
+
+}
+/*his post*/
 @import '../../style/xiaomi.wxss';
 page{
   background-color: #abdd2211
@@ -195,6 +245,12 @@ page{
   height: 100%;
   width: 100%;
 }
+.container3{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
 .bookInfoVie{
   width: 50%;
   display: flex;
@@ -234,11 +290,6 @@ page{
   align-items: center;
   justify-content: left;
 }
-.headPic{
-  height: 70rpx;
-  width: 70rpx;
-  border-radius: 70rpx;
-}
 .name{
   font-size: 35rpx;
   color: #000;
@@ -247,4 +298,56 @@ page{
 .mail{
   width: 100%;
   margin-top: 3%;
+}
+/*top tabbar*/
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+  font-size: 30rpx;
+  color: #bbbbbb;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 90rpx;
+}
+.navbar .item.active{
+  color: #abdd22;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rpx;
+  background: #abdd22;
+}
+.starVie{
+  border-top-style: solid;
+  border-top-color: rgb(194, 194, 194);
+  border-top-width: 3rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+}
+.comVie{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #000;
+  border-radius: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.star{
+  height:60rpx;
+  width: 60rpx;
 }
